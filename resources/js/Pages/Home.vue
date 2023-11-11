@@ -1,5 +1,5 @@
 <template>
-    <h1>Home</h1>
+    <h1 class="text-4xl text-bold">Home</h1>
   
     <p>In this series, we will use the following frameworks:</p>
   
