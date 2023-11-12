@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Layout from "../Shared/Layout.vue";
+// import Layout from "../Shared/Layout";
 
-export default {
-  // components: { Layout },
-  layout: Layout,
-};
+// export default {
+//   // components: { Layout },
+//   layout: Layout,
+// };
 </script>

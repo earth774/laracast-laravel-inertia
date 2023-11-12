@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Layout from "../Shared/Layout.vue";
+// import Layout from "../Shared/Layout";
 
 export default {
   // components: { Layout },
-  layout: Layout,
+  // layout: Layout,
   props: { time: String }
 };
 </script>

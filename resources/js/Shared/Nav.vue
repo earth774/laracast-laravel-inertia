@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import NavLink from "./NavLink.vue";
+import NavLink from "@/Shared/NavLink.vue";
 
 export default {
   components: { NavLink },
