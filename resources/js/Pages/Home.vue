@@ -10,7 +10,7 @@
 </template>
 
 <script>
-// import Layout from "../Shared/Layout";
+// import Layout from "@/Shared/Layout";
 
 // export default {
 //   // components: { Layout },
