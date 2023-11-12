@@ -5,7 +5,7 @@ use Inertia\Inertia;
 use App\Models\User;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Auth\LoginController;
-
+use Illuminate\Support\Facades\Auth;
 
 Route::get('login', [LoginController::class, 'create'])->name('login');
 Route::post('login', [LoginController::class, 'store']);
@@ -26,10 +26,16 @@ Route::middleware('auth')->group(function () {
                 ->withQueryString()
                 ->through(fn($user) => [
                     'id' => $user->id,
-                    'name' => $user->name
+                    'name' => $user->name,
+                    'can' => [
+                        'edit' => Auth::user()->can('edit', $user)
+                    ]
                 ]),
 
-            'filters' => Request::only(['search'])
+                'filters' => Request::only(['search']),
+                'can' => [
+                    'createUser' => Auth::user()->can('create', User::class)
+                ]
         ]);
     });
 
