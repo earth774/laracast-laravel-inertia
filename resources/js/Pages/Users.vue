@@ -1,25 +1,34 @@
 <template>
   <Head title="Users" />
-  
+
   <h1 class="text-3xl">
     Users
   </h1>
 
-  <div style="margin-top: 400px">
+  <!-- <div style="margin-top: 400px">
     <p>The current time is {{ time }}.</p>
 
     <Link href="/users" class="text-blue-500" preserve-scroll>
     Refresh
     </Link>
-  </div>
+  </div> -->
+
+  <ul>
+    <li
+      v-for="user in users"
+      :key="user.id"
+      v-text="user.name"
+    />
+  </ul>
 </template>
 
-<script>
+<script setup>
 // import Layout from "../Shared/Layout";
 
-export default {
+defineProps({ users: Array });
+// export default {
   // components: { Layout },
   // layout: Layout,
-  props: { time: String }
-};
+  // props: { time: String }
+// };
 </script>

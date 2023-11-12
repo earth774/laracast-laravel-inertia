@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,9 @@ Route::get('/users', function () {
     sleep(2);
 
     return Inertia::render('Users', [
-        'time' => now()->toTimeString()
+        'users' => User::all()->map(fn($user) => [
+            'name' => $user->name
+        ])
     ]);
 });
 
