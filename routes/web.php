@@ -37,13 +37,15 @@ Route::get('/users', function () {
 
         'filters' => Request::only(['search'])
     ]);
-});
+})->name('users');
 
 Route::get('/users/create', function () {
     return Inertia::render('Users/Create');
 });
 
 Route::post('/users', function () {
+    sleep(3);
+
     $attributes = Request::validate([
         'name' => 'required',
         'email' => ['required', 'email'],
@@ -52,7 +54,7 @@ Route::post('/users', function () {
 
     User::create($attributes);
 
-    return Inertia::location('/users');
+    return to_route('/users');
 });
 
 Route::get('/settings', function () {
