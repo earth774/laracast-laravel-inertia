@@ -29,7 +29,9 @@
                                     <div class="flex items-center">
                                         <div>
                                             <div class="text-sm font-medium text-gray-900">
+                                                <Link :href="`/user/${user.id}`">
                                                 {{ user.name }}
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -53,10 +55,12 @@
   
 <script setup>
 // import Layout from "../Shared/Layout";
-import Pagination from "@/Shared/Pagination.vue";
-import { ref, watch } from "vue";
+// import Pagination from "@/Shared/Pagination.vue";
+import { ref, watch,defineAsyncComponent } from "vue";
 import { router } from '@inertiajs/vue3'
 import debounce from "lodash/debounce";
+
+let Pagination = defineAsyncComponent(()=> import('@/Shared/Pagination.vue'));
 
 let props = defineProps({
     users: Object,

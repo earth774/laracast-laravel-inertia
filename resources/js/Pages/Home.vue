@@ -5,11 +5,12 @@
   </Head>
 
   <h1 class="text-3xl">
-    Home
+    Home {{ name }}
   </h1>
 </template>
 
-<script>
+<script setup>
+defineProps({ name: String })
 // import Layout from "@/Shared/Layout";
 
 // export default {

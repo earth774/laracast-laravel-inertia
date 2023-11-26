@@ -23,15 +23,18 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $visible = ['*'];
+
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password',
+    //     'remember_token',
+    //     'stripe_token'
+    // ];
 
     /**
      * The attributes that should be cast.
@@ -47,4 +50,9 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    // public function toArray()
+    // {
+    //     return [];
+    // }
 }
