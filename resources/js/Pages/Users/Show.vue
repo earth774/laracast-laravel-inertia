@@ -1,11 +1,11 @@
 <template>
-  <Head :title=user.name />
+  <Head :title=user.data.name />
 
   <h1 class="text-3xl">
-    {{user.name}}
+    {{user.data.name}}
   </h1>
-  <p>{{ user.email }}</p>
-  <p>Register: {{ user.created_at }}</p>
+  <p>{{ user.data.email }}</p>
+  <p>Register: {{ user.data.created_at }}</p>
 </template>
 
 <script setup>
