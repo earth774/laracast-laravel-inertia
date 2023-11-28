@@ -8,42 +8,20 @@
     Blog
   </h1>
 
-  <pre>
-    <code>
-      class Controller extends BaseController
-      {
-          use AuthorizesRequests, ValidatesRequests;
-      }
-    </code>
-  </pre>
-
-  <div id="example2">
-    <pre>
-      <code ref="code">
-        class Controller extends BaseController
-        {
-            use AuthorizesRequests, ValidatesRequests;
-        }
-      </code>
-    </pre>
-  </div>
+  <Highlight :code="snappet"/>
 </template>
 
 <script setup>
 
-import { onMounted, ref } from "vue";
-import { highlightAll,highlight,highlightElement } from "@/Services/SyntaxHighlighting";
+import Highlight from "@/Components/Highlight.vue";
 
-defineProps({ name: String })
-
-const code = ref([])
-
-onMounted(() => {
-  // highlightAll(); 
-  // highlight("#example2")
-  highlightElement(code.value);
-
-})
+let snappet = 
+`
+  class Controller extends BaseController
+  {
+      use AuthorizesRequests, ValidatesRequests;
+  }
+`;
 // import Layout from "@/Shared/Layout";
 
 // export default {
