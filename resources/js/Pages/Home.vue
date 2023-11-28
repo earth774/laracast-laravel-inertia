@@ -15,13 +15,11 @@
 
 import Highlight from "@/Components/Highlight.vue";
 
-let snappet = 
-`
+let snappet = `
   class Controller extends BaseController
   {
       use AuthorizesRequests, ValidatesRequests;
-  }
-`;
+  }`;
 // import Layout from "@/Shared/Layout";
 
 // export default {
