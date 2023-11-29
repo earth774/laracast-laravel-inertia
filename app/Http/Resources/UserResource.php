@@ -20,6 +20,7 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'created_at' => $this->created_at,
+            // 'follows' => $this->follows->pluck('id'),
             'can' => [
                 'edit' => Auth::user()->can('edit', $this->resource)
             ],

@@ -56,9 +56,10 @@
 <script setup>
 // import Layout from "../Shared/Layout";
 // import Pagination from "@/Shared/Pagination.vue";
-import { ref, watch,defineAsyncComponent } from "vue";
+import { ref, watch,defineAsyncComponent, onMounted } from "vue";
 import { router } from '@inertiajs/vue3'
 import debounce from "lodash/debounce";
+import { useCurrentUser } from "@/Composables/useCurrentUser"
 
 let Pagination = defineAsyncComponent(()=> import('@/Shared/Pagination.vue'));
 
@@ -76,6 +77,10 @@ watch(search, debounce(function (value) {
         replace: true
     });
 },300));
+
+onMounted(()=>{
+    console.log(useCurrentUser());
+});
 // export default {
 // components: { Layout },
 // layout: Layout,
